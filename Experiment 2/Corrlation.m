@@ -3,13 +3,10 @@ clear
  close all
 
 %% Load Data
-Data(1) = load('DataExtraction_7_21.mat');
-Data(2) = load('DataExtraction_7_28.mat');
-Data(3) = load('DataExtraction_8_04.mat');
-Trajectory(1) = load('Trajectory_7_21_1.mat');
-Trajectory(2) = load('Trajectory_7_28_1.mat');
-Trajectory(3) = load('Trajectory_8_04_1.mat');
-Data_Neuron = load('neuron_select_E2_1Hz.mat');
+addpath(genpath(pwd));
+Data(1) = load('DataExtraction_E2_demo.mat');
+Trajectory(1) = load('Trajectory_E2_demo.mat');
+Data_Neuron = load('neuron_select_E2_demo.mat');
 number_session = 4;
 
 %%
@@ -18,7 +15,7 @@ begin_xxx = 0;
 num_e = date;
 record(1:8,1:96) = 0;
 record2(1:8,1:96,1:100) = 0;
-for num_e = 1 : 3
+for num_e = 1 
     for num_session = 1:number_session
         for num_trial = 1 : 40
             if Trajectory(num_e).record(num_session).success(num_trial) == 1  
@@ -89,7 +86,7 @@ for i = 1 : 8
             num_x = floor(ok_trial(i) / 2);
             list_1 = randperm(ok_trial(i),num_x);
             list_2 = [];
-            for jjj = 1 : ok_trial
+            for jjj = 1 : ok_trial(i)
                 if isempty(find(jjj == list_1(:), 1))
                     list_2 = [list_2,jjj];
                 end
@@ -101,7 +98,7 @@ for i = 1 : 8
                 
                 
                 aa(jjj) = mean(record2(i,jjj,list_1(1:num_x)));
-                bb(jjj) = mean(record2(i,jjj,list_2(1:(ok_trial - num_x))));
+                bb(jjj) = mean(record2(i,jjj,list_2(1:(ok_trial(i) - num_x))));
 
 
                 if i > 4
