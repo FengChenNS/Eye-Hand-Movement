@@ -56,4 +56,5 @@ Main code and dataset for 'Population Coding of Eye Movements by Human Hand Knob
             Pretest and posttest neural activities projected into own subspaces. (Figure 6e/f/g)
 
 4. Additional Information
+
     This content is licensed under MIT License.
