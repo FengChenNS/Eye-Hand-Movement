@@ -3,16 +3,13 @@ clear
 close all
 
 %% Load Data
-Data(1) = load('DataExtraction_7_21.mat');
-Data(2) = load('DataExtraction_7_28.mat');
-Data(3) = load('DataExtraction_8_04.mat');
-Trajectory(1) = load('Trajectory_7_21_1.mat');
-Trajectory(2) = load('Trajectory_7_28_1.mat');
-Trajectory(3) = load('Trajectory_8_04_1.mat');
-Data_Neuron = load('neuron_select_E2_1Hz.mat');
+addpath(genpath(pwd));
+Data(1) = load('DataExtraction_E2_demo.mat');
+Trajectory(1) = load('Trajectory_E2_demo.mat');
+Data_Neuron = load('neuron_select_E2_demo.mat');
 number_session = 4;
 %%
-date = 3;
+date = 1;
 ok_neuron(1:600)  = 0;
 okneuron_number = 0;
 for num_neuron = 1 : 600
@@ -117,29 +114,31 @@ a_2 = a_2 - a_3;
 xx(1:4) = [num_neuron-a_1-a_2-a_3,a_2,a_3,a_1];
 
 cm = [[256 256 256]; [234 139 173]; [176 141 186]; [118 143 198]] / 256;
-
+pie(xx)
 %
-same_neron_num =0;
-same_d = 0;
-for i = 1 : okneuron_number
-    f_1 = 0; f_2 = 0;
-    for j = 1 : 4
-        if p_neuron(j,i) == 1
-            f_1 = 1;
-        end
-    end
-    for j = 5 : 8
-        if p_neuron(j,i) == 1
-            f_2 = 1;
-        end
-    end
-    if f_1 ==1 && f_2 ==1
-        same_neron_num = same_neron_num + 1;
-        [v, a_1] = max(distance(1:4,i));
-        [v, a_2] = max(distance(5:8,i));
-        if a_1 == a_2 
-            same_d = same_d + 1;
-        end
-    end
-        
-end
+% same_neron_num =0;
+% same_d = 0;
+% for i = 1 : okneuron_number
+%     f_1 = 0; f_2 = 0;
+%     for j = 1 : 4
+%         if p_neuron(j,i) == 1
+%             f_1 = 1;
+%         end
+%     end
+%     for j = 5 : 8
+%         if p_neuron(j,i) == 1
+%             f_2 = 1;
+%         end
+%     end
+%     if f_1 ==1 && f_2 ==1
+%         same_neron_num = same_neron_num + 1;
+%         [v, a_1] = max(distance(1:4,i));
+%         [v, a_2] = max(distance(5:8,i));
+%         if a_1 == a_2 
+%             same_d = same_d + 1;
+%         end
+%     end
+% 
+% end
+
+
