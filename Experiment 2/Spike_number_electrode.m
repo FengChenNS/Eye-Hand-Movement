@@ -3,13 +3,10 @@ clear
 close all
 
 %% Load Data
-Data(1) = load('DataExtraction_7_21.mat');
-Data(2) = load('DataExtraction_7_28.mat');
-Data(3) = load('DataExtraction_8_04.mat');
-Trajectory(1) = load('Trajectory_7_21_1.mat');
-Trajectory(2) = load('Trajectory_7_28_1.mat');
-Trajectory(3) = load('Trajectory_8_04_1.mat');
-Data_Neuron = load('neuron_select_E2_1Hz.mat');
+addpath(genpath(pwd));
+Data(1) = load('DataExtraction_E2_demo.mat');
+Trajectory(1) = load('Trajectory_E2_demo.mat');
+Data_Neuron = load('neuron_select_E2_demo.mat');
 number_session = 4;
 %%
 ok_trial(1:8) = 0;
@@ -42,7 +39,7 @@ num_EH_all = 0;
 num_E_all = 0;
 num_H_all = 0;
 
-for num_e = 1 : 3 
+for num_e = 1
     for num_session = 1 : number_session
         for num_trial = 1 : 40
             if Trajectory(num_e).record(num_session).success(num_trial) == 1  
@@ -78,7 +75,7 @@ for num_e = 1 : 3
                     time_move = Data(num_e).record(num_session).time(num_trial,4);
                     
                     tt_move = mean( Data(num_e).record(num_session).Spike_Count(num_neuron,num_trial, time_move : time_move+199) );
-                    tt_rest = mean( Data(num_e).record(num_session).Spike_Count(num_neuron,num_trial, time_rest : time_move) );
+                    tt_rest = mean( Data(num_e).record(num_session).Spike_Count(num_neuron,num_trial, time_move - 20 : time_move) );
                     
                     record_move(labell,No_Channel,ok_trial(labell)) = record_move(labell,No_Channel,ok_trial(labell)) + tt_move;
                     record_rest(labell,No_Channel,ok_trial(labell)) = record_rest(labell,No_Channel,ok_trial(labell)) + tt_rest;
