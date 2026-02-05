@@ -15,15 +15,15 @@ Main code and dataset for 'Population Coding of Eye Movements by Human Hand Knob
         3.1.1 PSD
             PSD averaged across the sites adjacent to and clearly situated outside the hand knob area. (Figure 1c)
         3.1.2 
-            Time-frequency responses of the hand knob area and other areas. (Figure 1d)
-   
-   3.2 Experiment 2
+                Time-frequency responses of the hand knob area and other areas. (Figure 1d)
+    
+    3.2 Experiment 2
         3.2.1 Pie
             Calculate the percentage distribution of the single-units sensitive to eye, hand and both movements, as well as nonsensitive units.(Figure 2d)
         3.2.2 Neuronal_cluster
             Movement-related MUA in each electrode for the four directions of the two effectors. (Figure 2e)
         3.2.3 Corrlation
-           Correlation matrix of population activity. Each square of a correlation matrix indicates the Pearson correlation coefficient of MUA from all electrodes between the two matched or unmatched directions of the same or different effectors. (figure 2f)
+            Correlation matrix of population activity. Each square of a correlation matrix indicates the Pearson correlation coefficient of MUA from all electrodes between the two matched or unmatched directions of the same or different effectors. (figure 2f)
         3.2.4 SVM
             SVM classifier was used to quantify the information about tracking directions carried by the MUA from all electrodes. (Figure 2g)
         3.2.5 PCA
@@ -37,7 +37,7 @@ Main code and dataset for 'Population Coding of Eye Movements by Human Hand Knob
         3.3.3 PCA
             Principal Component Analysis. (Figure 3e)
         3.3.4 Corrlation
-           Calculate the correlation between the eye- and hand-tracking for matched versus unmatched somato-centered location, extrinsic direction and intrinsic direction. 
+            Calculate the correlation between the eye- and hand-tracking for matched versus unmatched somato-centered location, extrinsic direction and intrinsic direction. 
 
     3.4 Experiment 4
         3.4.1 VennDiagrams
