@@ -3,19 +3,16 @@ clear
 close all
 
 %% Load Data
-Data(1) = load('DataExtraction_7_21.mat');
-Data(2) = load('DataExtraction_7_28.mat');
-Data(3) = load('DataExtraction_8_04.mat');
-Trajectory(1) = load('Trajectory_7_21_1.mat');
-Trajectory(2) = load('Trajectory_7_28_1.mat');
-Trajectory(3) = load('Trajectory_8_04_1.mat');
-Data_Neuron = load('neuron_select_E2_1Hz.mat');
+addpath(genpath(pwd));
+Data(1) = load('DataExtraction_E2_demo.mat');
+Trajectory(1) = load('Trajectory_E2_demo.mat');
+Data_Neuron = load('neuron_select_E2_demo.mat');
 number_session = 4;
 number_ok(1:8) = 0;
 record_ave_spike(1:8,1:400,1:400) = 0;
 %%
 
-for num_e = 1:3
+for num_e = 1
     for num_session = 1 : number_session
         for num_trial = 1 : Data(num_e).record(num_session).number_trial
             
@@ -52,13 +49,12 @@ for num_e = 1:3
 end
 
 %% SVM
-
 global record_beta;
 AC(1:200) = 0;  AC_4all(1:4,1:4)=0;
-% train_move_type = [1,2,3,4];
-  train_move_type = [5,6,7,8];
+train_move_type = [1,2,3,4];
+% train_move_type = [5,6,7,8];
   test_move_type = [1,2,3,4];
-%  test_move_type = [5,6,7,8];
+% test_move_type = [5,6,7,8];
 
 % train_move_type = [1,2];
 % test_move_type = [5,6];
@@ -67,7 +63,7 @@ AC(1:200) = 0;  AC_4all(1:4,1:4)=0;
 % test_number = [5,5,5,5];
  test_number = number_ok(test_move_type);
 
-for test_times = 1 : 200
+for test_times = 1 : 100
     % train data
     num_test = 0; 
     num_train = 0;
@@ -101,8 +97,7 @@ for test_times = 1 : 200
         end
         true_class(label_test(i)) = true_class(label_test(i)) + 1;
     end
-    AC(test_times) = tt/sum(test_number);
-    test_times 
+    AC(test_times) = tt/sum(test_number); 
     
     AC_4(1:4,1:4) = 0;
     for i = 1 : sum(test_number)   
