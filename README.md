@@ -7,22 +7,19 @@ Main code and dataset for 'Population Coding of Eye Movements by Human Hand Knob
 
     MATLAB Version: R2022b
 
-3. Code and database description
+2. Code and database description
 
     All codes are organized into four separate directories corresponding to the four experimental groups in this project. Each experimental directory contains multiple .m files, as well as a Function folder and a Dataset folder. The individual .m files implement different computational procedures and are used to reproduce the main results and figures reported in the manuscript. The Function folder includes all essential functions required to run the project, while the Dataset folder contains the datasets used for demonstration purposes.
 
-5. Code instructions
+3. Code instructions
 
     We provide most of the code along with the corresponding usable datasets to reproduce the results of this study. Note that the datasets are provided for demonstration purposes only.
 
     3.1 Experiment 1
-   
         3.1.1 PSD
-   
             PSD averaged across the sites adjacent to and clearly situated outside the hand knob area. (Figure 1c)
-   
         3.1.2 Time-frequency response
-                Time-frequency responses of the hand knob area and other areas. (Figure 1d)
+           Time-frequency responses of the hand knob area and other areas. (Figure 1d)
     
     3.2 Experiment 2
         3.2.1 Pie
@@ -58,5 +55,5 @@ Main code and dataset for 'Population Coding of Eye Movements by Human Hand Knob
         3.4.5 TwoD_ownsubspace
             Pretest and posttest neural activities projected into own subspaces. (Figure 6e/f/g)
 
-7. Additional Information
+4. Additional Information
     This content is licensed under MIT License.
