@@ -2,13 +2,10 @@ clc
 clear
 close all
 %% Load Data
-Data(1) = load('DataExtraction_7_21.mat');
-Data(2) = load('DataExtraction_7_28.mat');
-Data(3) = load('DataExtraction_8_04.mat');
-Trajectory(1) = load('Trajectory_7_21_1.mat');
-Trajectory(2) = load('Trajectory_7_28_1.mat');
-Trajectory(3) = load('Trajectory_8_04_1.mat');
-Data_Neuron = load('neuron_select_E2_1Hz.mat');
+addpath(genpath(pwd));
+Data(1) = load('DataExtraction_E2_demo.mat');
+Trajectory(1) = load('Trajectory_E2_demo.mat');
+Data_Neuron = load('neuron_select_E2_demo.mat');
 number_session = 4;
 %%
 oktrial = 0;
@@ -84,7 +81,7 @@ end
 number_class = 50;
 label_numbers = 2;
 [coeff2, score2, latent2, tsquared2, explained2, mu2] = pca(linshi,'NumComponents',number_class);
-score = normalize((coeff2'*PCA_trial_2')');
+score = normalize((coeff2'*PCA_trial')');
 
 ZX(1:8,1:50) = 0;
 for num_trial = 1 : oktrial
@@ -265,7 +262,7 @@ line([ZX(8,x_1),ZX(6,x_1)],[ZX(8,x_2),ZX(6,x_2)],'Color','r');
 
 
 %% SVM
-close all
+
 ttt(1:8) = 0;
 tt(1:8,1:30,1:2) = 0;
 AC_LD_H_all(1:4,1:8) = 0;
@@ -352,7 +349,6 @@ for time = 1 : 100
     AC_final(time,1) =  AC_E;
     AC_final(time,2) =  AC_H;
 end
-close all
 mean(AC_final(1:time,1))
 mean(AC_final(1:time,2))
 
