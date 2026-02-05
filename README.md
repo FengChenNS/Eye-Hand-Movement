@@ -2,13 +2,15 @@
 Main code and dataset for 'Population Coding of Eye Movements by Human Hand Knob for Eye-Hand Integration'.
 
 1. System Requirements
+
     Operating System: MacOS
+
     MATLAB Version: R2022b
 
-2. Code and database description
+3. Code and database description
     All codes are organized into four separate directories corresponding to the four experimental groups in this project. Each experimental directory contains multiple .m files, as well as a Function folder and a Dataset folder. The individual .m files implement different computational procedures and are used to reproduce the main results and figures reported in the manuscript. The Function folder includes all essential functions required to run the project, while the Dataset folder contains the datasets used for demonstration purposes.
 
-3. Code instructions
+4. Code instructions
     We provide most of the code along with the corresponding usable datasets to reproduce the results of this study. Note that the datasets are provided for demonstration purposes only.
 
     3.1 Experiment 1
@@ -51,5 +53,5 @@ Main code and dataset for 'Population Coding of Eye Movements by Human Hand Knob
         3.4.5 TwoD_ownsubspace
             Pretest and posttest neural activities projected into own subspaces. (Figure 6e/f/g)
 
-4. Additional Information
+5. Additional Information
     This content is licensed under MIT License.
