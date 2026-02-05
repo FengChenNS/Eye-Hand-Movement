@@ -3,13 +3,10 @@ clear
 close all
 
 %% Load Data
-Data(1) = load('DataExtraction_7_21.mat');
-Data(2) = load('DataExtraction_7_28.mat');
-Data(3) = load('DataExtraction_8_04.mat');
-Trajectory(1) = load('Trajectory_7_21_1.mat');
-Trajectory(2) = load('Trajectory_7_28_1.mat');
-Trajectory(3) = load('Trajectory_8_04_1.mat');
-Data_Neuron = load('neuron_select_E2_1Hz.mat');
+addpath(genpath(pwd));
+Data(1) = load('DataExtraction_E2_demo.mat');
+Trajectory(1) = load('Trajectory_E2_demo.mat');
+Data_Neuron = load('neuron_select_E2_demo.mat');
 number_session = 4;
 %%
 ok_trial(1:8) = 0;
@@ -19,7 +16,7 @@ jg = 5;
 num_E_E = 0;
 num_H_H = 0;
 num_EH_EH = 0;
-for num_e = 1 : 3 
+for num_e = 1
     for num_session = 1 : number_session
         for num_trial = 1 : 40
             if Trajectory(num_e).record(num_session).success(num_trial) == 1  
